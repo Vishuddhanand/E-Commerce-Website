@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two-Wheeler Parts | Shree Krishna Enterprises</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <img src="./assets/image.png" alt="Shree Krishna Enterprises Logo" class="logo" />
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html#products">Products</a></li>
+                <li><a href="./index.html#categories">Categories</a></li>
+                <li><a href="./index.html#about">About</a></li>
+                <li><a href="./index.html#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Category Content -->
+    <section class="products">
+        <h2>Two-Wheeler Parts</h2>
+        <div class="product-grid">
+            <a href="product.html?product=socker-seal-splendor" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/socker seal splendor.png" alt="Shocker Seal Splendor">
+                </div>
+                <h3>Shocker Seal Splendor</h3>
+                <p>OE Quality</p>
+                <span class="price">₹19</span>
+            </a>
+
+            <a href="product.html?product=brake-pad-pulsur" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/Brake Pad Pulsur.webp" alt="Brake Pad Pulsar">
+                </div>
+                <h3>Brake Pad Pulsar</h3>
+                <p>OE Quality</p>
+                <span class="price">₹60</span>
+            </a>
+
+            <a href="product.html?product=unicorn-shocker-seal" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/honda-unicorn-fork-oil-seal-500x500.webp" alt="Shocker Seal Unicorn">
+                </div>
+                <h3>Shocker Seal Unicorn</h3>
+                <p>OE Quality</p>
+                <span class="price">₹19</span>
+            </a>
+
+            <a href="product.html?product=discover-handle-grip" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/Discover Handle Grip.png" alt="Discover Handle Grip">
+                </div>
+                <h3>Discover Handle Grip</h3>
+                <p>OE Quality</p>
+                <span class="price">₹42</span>
+            </a>
+
+            <a href="product.html?product=unicorn-air-filter" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/unicorn air filter.png" alt="Unicorn Air Filter">
+                </div>
+                <h3>Unicorn Air Filter</h3>
+                <p>OE Quality</p>
+                <span class="price">₹60</span>
+            </a>
+
+            <a href="product.html?product=tvs-genune-parts" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/TVS Genune Part.png" alt="TVS Genuine Parts">
+                </div>
+                <h3>TVS Geniune Parts</h3>
+                <p>OE Quality</p>
+                <span class="price">₹85</span>
+            </a>
+
+            <a href="product.html?product=horn-button-activa" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/Horn Button Activa.png" alt="Horn Button Activa">
+                </div>
+                <h3>Horn Button Activa</h3>
+                <p>OE Quality</p>
+                <span class="price">₹17</span>
+            </a>
+
+            <a href="product.html?product=indicator-button-activa" class="product-card">
+                <div class="product-img">
+                    <img src="./assets/indicator button activa.png" alt="Indicator Button Activa">
+                </div>
+                <h3>indicator Button Activa</h3>
+                <p>OE Quality</p>
+                <span class="price">₹17</span>
+            </a>
+
+        </div>
+
+        
+
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3>Shree Krishna Enterprises</h3>
+                <p>Gat No. 1780, Chakan – Shikrapur Road<br>Shel Pimpalgaon, Pune, Maharashtra 410501</p>
+            </div>
+            <div class="footer-section footer-logo">
+                <img src="./assets/image.png" alt="Logo" />
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 Shree Krishna Enterprises | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById("goTop").onclick = () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+
+        function openProduct(id) {
+            window.location.href = `product.html?product=${id}`;
+        }
+
+
+    </script>
+</body>
+
+</html>

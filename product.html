@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product | Shree Krishna Enterprises</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="./assets/image.png" alt="Shree Krishna Enterprises Logo" class="logo" />
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#products">Products</a></li>
+        <li><a href="./index.html#categories">Categories</a></li>
+        <li><a href="./index.html#about">About</a></li>
+        <li><a href="./index.html#footer">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-detail">
+      <div class="product-detail-container">
+        <img id="productImg" class="detail-img" src="./assets/sample-product.jpg" alt="Product" />
+        <div class="detail-info">
+          <h2 id="productName">Splendor Drum Rubber</h2>
+          <p id="productDesc">OE Quality | Set of 5 | Durable and long-lasting for Splendor models.</p>
+          <span id="productPrice" class="price">₹24</span>
+          <div class="quantity-section">
+            <label for="productQuantity">Quantity:</label>
+            <input type="number" id="productQuantity" min="1" value="1" required />
+          </div>
+          <button id="orderBtn" class="btn">Place Order (COD)</button>
+        </div>
+      </div>
+
+      <div id="orderForm" class="order-form hidden">
+        <h3>Place Your Order</h3>
+        <form>
+          <input type="text" placeholder="Full Name" required />
+          <input type="tel" placeholder="Mobile Number" required />
+          <textarea placeholder="Delivery Address" required></textarea>
+          <button type="submit" class="btn">Confirm Cash on Delivery</button>
+        </form>
+      </div>
+
+      <div id="thankyou" class="thankyou-msg hidden">
+        <h3>✅ Order Placed Successfully!</h3>
+        <p>Your order will be delivered with Cash on Delivery. We will contact you on WhatsApp with tracking details
+          soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      © 2025 Shree Krishna Enterprises | Pune, Maharashtra
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    // On clicking Place Order button, validate quantity and show order form
+    document.getElementById("orderBtn").onclick = function () {
+      const quantityInput = document.getElementById("productQuantity");
+      const quantity = parseInt(quantityInput.value);
+
+      if (!quantity || quantity < 1) {
+        alert("Please enter a valid quantity of 1 or more.");
+        quantityInput.focus();
+        return;
+      }
+
+      // Hide order button and quantity input to avoid confusion
+      this.style.display = "none";
+      quantityInput.style.display = "none";
+      document.querySelector('.quantity-section').style.display = "none";
+
+      // Show the order form
+      document.getElementById("orderForm").classList.remove("hidden");
+    };
+
+    // On order form submit, open WhatsApp with order details then show thank you message
+    document.querySelector("#orderForm form").onsubmit = function (e) {
+      e.preventDefault();
+
+      const userName = this.querySelector('input[placeholder="Full Name"]').value.trim();
+      const userPhone = this.querySelector('input[placeholder="Mobile Number"]').value.trim();
+      const userAddress = this.querySelector('textarea[placeholder="Delivery Address"]').value.trim();
+      const productName = document.getElementById("productName").textContent;
+      const quantity = document.getElementById("productQuantity").value;
+
+      const message = `New order received!%0AName: ${userName}%0APhone: ${userPhone}%0AAddress: ${userAddress}%0AProduct: ${productName}%0AQuantity: ${quantity}%0APayment: Cash on Delivery`;
+      const ownerNumber = "919637401456";  // Replace with your full WhatsApp number with country code
+
+      const whatsappUrl = `https://wa.me/${ownerNumber}?text=${message}`;
+
+      window.open(whatsappUrl, "_blank");
+
+      setTimeout(() => {
+        document.getElementById("orderForm").classList.add("hidden");
+        document.getElementById("thankyou").classList.remove("hidden");
+      }, 500);
+    };
+
+
+
+  </script>
+
+</body>
+
+</html>
